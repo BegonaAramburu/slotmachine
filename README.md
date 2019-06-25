@@ -1,6 +1,6 @@
 # slotmachine
 Juego tragaperras
 
-versio 1
+versio bego
 
-copyright Bego , Angel 2019
+copyright Bego  2019
