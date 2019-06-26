@@ -9,13 +9,14 @@
 	<div id="caja">
 		<ul class="bombos">
 			<li>
-				<img id="bomboA" alt="" src="img/dau.png">
+				<img id="bomboA" alt="" src="img/frutas.jpg" width=132 height=132>
+				<!--  <img name="imagen" id="imagen" alt="Imagenes">-->
 			</li>
 			<li>
-				<img id="bomboB" alt="" src="img/dau.png">
+				<img id="bomboB" alt="" src="img/frutas.jpg" width=132 height=132>
 			</li>
 			<li>
-				<img id="bomboC" alt="" src="img/dau.png">
+				<img id="bomboC" alt="" src="img/frutas.jpg" width=132 height=132>
 			</li>
 		
 		</ul>
@@ -23,8 +24,28 @@
 			<input type="button" value="Tirar" id="tirar">
 		</div>
 	</div>
-	<script type="text/javascript" src="js/azar.js">
+	<script type="text/javascript" > //src="js/azar.js"
 	
+	document.getElementById("tirar").onclick = function(){
+		var imagenesA = new Array();
+		imagenesA[0] = "img/img1.jpg";
+		imagenesA[1] = "img/img2.jpg";
+		imagenesA[2] = "img/img3.jpg";
+		imagenesA[3] = "img/img4.jpg";
+		imagenesA[4] = "img/img5.jpg";
+		imagenesA[5] = "img/img6.jpg";
+		
+		
+		console.log(imagenesA);
+		
+		var frutasBomboA = imagenesA.length;
+		var azar=Math.floor(Math.random()*frutasBomboA);
+		console.log(imagenesA[azar]);
+		
+		document.getElementById("bomboA").src = imagenesA[azar];
+		
+		
+	}
 	
 	
 	
