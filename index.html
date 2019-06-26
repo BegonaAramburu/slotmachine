@@ -20,6 +20,7 @@
 			</li>
 		
 		</ul>
+		<input type="text" id="puntos" value="Puntuación" readonly> 
 		<div class="controles">
 			<input type="button" value="Tirar" id="tirar">
 		</div>
@@ -27,6 +28,19 @@
 	<script type="text/javascript" > //src="js/azar.js"
 	
 	document.getElementById("tirar").onclick = function(){
+		
+		var puntos = 100;
+		document.getElementById("puntos").value = puntos;
+		var apuesta = 10;
+		var premio = 0;
+
+		//creamos una variable array que nos guarde los 3 valores de los bombos de cada tirada
+		
+		//mejora var combinacion = [];
+		// mejora console.log(combinacion);
+		
+		//bomboA
+		//las imagenes del bomboA se guardan en un Array llamado imagenesA
 		var imagenesA = new Array();
 		imagenesA[0] = "img/img1.jpg";
 		imagenesA[1] = "img/img2.jpg";
@@ -35,14 +49,150 @@
 		imagenesA[4] = "img/img5.jpg";
 		imagenesA[5] = "img/img6.jpg";
 		
-		
 		console.log(imagenesA);
 		
+		//función para escoger aleatoriamente una posicion del array y devolvernos la imagen
 		var frutasBomboA = imagenesA.length;
-		var azar=Math.floor(Math.random()*frutasBomboA);
-		console.log(imagenesA[azar]);
+		var azarA=Math.floor(Math.random()*frutasBomboA);
+		console.log(imagenesA[azarA]);
 		
-		document.getElementById("bomboA").src = imagenesA[azar];
+		/* mejoracombinacion.push(imagenesA[azar]);
+		console.log(combinacion);*/
+		
+		//guardamos la imagen aleatoria en el id=bomboA
+		document.getElementById("bomboA").src = imagenesA[azarA];
+		
+		
+		//bomboB
+		//las imagenes del bomboB se guardan en un Array llamado imagenesB
+		var imagenesB = new Array();
+		imagenesB[0] = "img/img1.jpg";
+		imagenesB[1] = "img/img2.jpg";
+		imagenesB[2] = "img/img3.jpg";
+		imagenesB[3] = "img/img4.jpg";
+		imagenesB[4] = "img/img5.jpg";
+		imagenesB[5] = "img/img6.jpg";
+		
+		console.log(imagenesB);
+		
+		//función para escoger aleatoriamente una posicion del array y devolvernos la imagen
+		var frutasBomboB = imagenesB.length;
+		var azarB=Math.floor(Math.random()*frutasBomboB);
+		console.log(imagenesB[azarB]);
+		
+		/* mejora combinacion.push(imagenesB[azar]);
+		console.log(combinacion); */
+		
+		//guardamos la imagen aleatoria en el id=bomboB
+		document.getElementById("bomboB").src = imagenesB[azarB];
+		
+		//bomboC
+		//las imagenes del bomboC se guardan en un Array llamado imagenesC
+		var imagenesC = new Array();
+		imagenesC[0] = "img/img1.jpg";
+		imagenesC[1] = "img/img2.jpg";
+		imagenesC[2] = "img/img3.jpg";
+		imagenesC[3] = "img/img4.jpg";
+		imagenesC[4] = "img/img5.jpg";
+		imagenesC[5] = "img/img6.jpg";
+		
+		console.log(imagenesC);
+		
+		//función para escoger aleatoriamente una posicion del array y devolvernos la imagen
+		var frutasBomboC = imagenesC.length;
+		var azarC=Math.floor(Math.random()*frutasBomboC);
+		console.log(imagenesC[azarC]);
+		
+		/*combinacion.push(imagenesC[azar]);
+		console.log(combinacion);*/
+		
+		//guardamos la imagen aleatoria en el id=bomboC
+		document.getElementById("bomboC").src = imagenesC[azarC];
+		
+		var imagenes = new Array();
+		imagenes[0] = "img/img1.jpg";
+		imagenes[1] = "img/img2.jpg";
+		imagenes[2] = "img/img3.jpg";
+		imagenes[3] = "img/img4.jpg";
+		imagenes[4] = "img/img5.jpg";
+		imagenes[5] = "img/img6.jpg";
+		
+		console.log(imagenes);
+		
+		
+		
+		if(imagenesA[azarA]==imagenes[5] && imagenesB[azarB]==imagenes[5] && imagenesC[azarC]==imagenes[5]){
+			premio = 500*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[4] && imagenesB[azarB]==imagenes[4] && imagenesC[azarC]==imagenes[4]){
+			premio = 250*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[4] && imagenesB[azarB]==imagenes[4] && imagenesC[azarC]!=imagenes[4]){
+			premio = 150*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[3] && imagenesB[azarB]==imagenes[3] && imagenesC[azarC]==imagenes[3]){
+			premio = 80*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[3] && imagenesB[azarB]==imagenes[3] && imagenesC[azarC]!=imagenes[3]){
+			premio = 60*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[2] && imagenesB[azarB]==imagenes[2] && imagenesC[azarC]==imagenes[2]){
+			premio = 50*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[2] && imagenesB[azarB]==imagenes[2] && imagenesC[azarC]!=imagenes[2]){
+			premio = 40*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[1] && imagenesB[azarB]==imagenes[1] && imagenesC[azarC]==imagenes[1]){
+			premio = 30*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[1] && imagenesB[azarB]==imagenes[1] && imagenesC[azarC]!=imagenes[1]){
+			premio = 15*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[0] && imagenesB[azarB]==imagenes[0] && imagenesC[azarC]==imagenes[0]){
+			premio = 10*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[0] && imagenesB[azarB]==imagenes[0] && imagenesC[azarC]!=imagenes[0]){
+			premio = 5*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else if(imagenesA[azarA]==imagenes[0] && imagenesB[azarB]!=imagenes[0]){
+			premio = 2*10;
+			puntos = puntos + premio - apuesta;
+			document.getElementById("puntos").value = puntos;
+			console.log(puntos);
+		}else{
+			puntos = puntos-apuesta;
+			console.log(puntos);
+			document.getElementById("puntos").value = puntos;
+		}
+		
+		
+		
+		
+		
+		
 		
 		
 	}
