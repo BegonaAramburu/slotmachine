@@ -2,12 +2,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>version bego2</title>
+<title>Slotmachine proyecto básico</title>
 <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 	<div id="caja">
+		
 		<ul class="bombos">
+			
 			<li>
 				<img id="bomboA" alt="" src="img/imgInicio.jpg">
 			</li>
@@ -22,77 +24,10 @@
 		<div class="controles">
 			<input type="button" value="Inicio" id="inicio">
 			<input type="button" value="Tirar" id="tirar">
-			<input type="text" value="Puntos" id="puntos">
+			<p>PUNTOS</p><input type="text" id="puntos" style="text-align:center">
+	
 		</div>
 	</div>
-	<script type="text/javascript" > //src="js/azar.js"
-	
-	//cuando le doy al botón de inicio empiezo
-	var puntos = 100;
-	var premio;
-	document.getElementById("inicio").onclick = function(){
-		
-		document.getElementById("puntos").value = puntos;
-	}
-			
-	
-		document.getElementById("tirar").onclick = function(){
-			puntos = puntos-10;
-			premio = 0;
-			var imagenes = ["img/img1.jpg", "img/img2.jpg", "img/img3.jpg", "img/img4.jpg", "img/img5.jpg", "img/img6.jpg"];
-			var numero = imagenes.length;
-				//console.log(numero);
-				//console.log(imagenes);
-				
-			var bomboA = Math.floor(Math.random()*numero);
-			var bomboB = Math.floor(Math.random()*numero);
-			var bomboC = Math.floor(Math.random()*numero);
-			
-				console.log(bomboA);
-				console.log(bomboB);
-				console.log(bomboC);
-			
-			document.getElementById("bomboA").src = imagenes[bomboA]
-			document.getElementById("bomboB").src = imagenes[bomboB]
-			document.getElementById("bomboC").src = imagenes[bomboC]
-			
-			if(bomboA==5 && bomboB==5 && bomboC==5){
-				premio = 500*10;
-			}else if(bomboA==4 && bomboB==4 && bomboC==4){
-				premio = 250*10;
-			}else if(bomboA==4 && bomboB==4 && bomboC!=4){
-				premio = 150*10;
-			}else if(bomboA==3 && bomboB==3 && bomboC==3){
-				premio = 80*10;
-			}else if(bomboA==3 && bomboB==3 && bomboC!=3){
-				premio = 60*10;
-			}else if(bomboA==2 && bomboB==2 && bomboC==2){
-				premio = 50*10;
-			}else if(bomboA==2 && bomboB==2 && bomboC!=2){
-				premio = 40*10;
-			}else if(bomboA==1 && bomboB==1 && bomboC==1){
-				premio = 30*10;
-			}else if(bomboA==1 && bomboB==1 && bomboC!=1){
-				premio = 15*10;
-			}else if(bomboA==0 && bomboB==0 && bomboC==0){
-				premio = 10*10;
-			}else if(bomboA==0 && bomboB==0 && bomboC!=0){
-				premio = 5*10;
-			}else if(bomboA==0 && bomboB!=0){
-				premio = 2*10;
-			}else{
-				premio = 0;
-			}
-			puntos = puntos+premio;
-			document.getElementById("puntos").value = puntos;
-			
-			if(puntos<=10){
-				document.getElementById("puntos").value = "No te quedan puntos";
-			}
-		}		
-	
-	
-		
-	</script>
+	<script type="text/javascript" src="js/funcionesSM.js"></script>
 </body>
 </html>
