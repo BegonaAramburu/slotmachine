@@ -10,9 +10,13 @@
 	}
 	/**
 	 * Esta función de Javascript permite adjudicar un premio dependiendo de las combinaciones ganadoras
+	 * Le pasamos los tres numeros obtenidos en los bombos como parámetros
+	 * @param bomboA
+	 * @param bomboB
+	 * @param bomboC
 	 * @returns Nos devuelve el valor del premio
 	 */	
-	function darPremio(){
+	function darPremio(bomboA, bomboB, bomboC){
 		if(bomboA==5 && bomboB==5 && bomboC==5){
 			premio = 500*10;
 		}else if(bomboA==4 && bomboB==4 && bomboC==4){
@@ -67,10 +71,12 @@ document.getElementById("tirar").onclick = function(){
 	var bomboA = randomArray(imagenes);
 	var bomboB = randomArray(imagenes);
 	var bomboC = randomArray(imagenes);
+	
 	//Las guardamos en su correspondiente elemento HTML con id "bomboA" B y C
 	document.getElementById("bomboA").src = imagenes[bomboA];
 	document.getElementById("bomboB").src = imagenes[bomboB];
 	document.getElementById("bomboC").src = imagenes[bomboC];
+	
 	console.log(bomboA);
 	console.log(bomboB);
 	console.log(bomboC);
@@ -78,7 +84,7 @@ document.getElementById("tirar").onclick = function(){
 	//4.Llamamos a la función darPremio
 		
 	//computar los puntos dependiendo del premio obtenido			
-	puntos = puntos + darPremio();
+	puntos = puntos + darPremio(bomboA, bomboB, bomboC);
 	//escribir los puntos obtenidos en el input de id="puntos"
 	document.getElementById("puntos").value = puntos;
 			
