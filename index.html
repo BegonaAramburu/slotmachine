@@ -65,6 +65,13 @@
 		
 		return premio;
 	}
+	
+	function alertaPremio(premio){
+		if(premio!=0){
+			document.getElementById("alertaPremio").innerHTML = premio + " PUNTOS";
+		}
+	}
+	
 
 	var puntos = 100;
 	var premio;
@@ -103,20 +110,12 @@
 		//computar los puntos dependiendo del premio obtenido			
 		puntos = puntos + darPremio(bomboA, bomboB, bomboC);
 		
-		if(premio!=0){
-			document.getElementById("alertaPremio").innerHTML = premio + " PUNTOS";
-		}
+		alertaPremio(premio);
 		
 		//escribir los puntos obtenidos en el input de id="puntos"
 		document.getElementById("puntos").value = puntos;
-		
-		//5. Si hay premio sale una alerta de premio
-		
-		//mostrarPremio();
-		
-				
 		//Condición para dejar de jugar
-		if(puntos<=10){
+		if(puntos<10){
 		document.getElementById("puntos").value = "No te quedan puntos";
 		}
 	}
