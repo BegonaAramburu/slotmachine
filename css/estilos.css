@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#caja .bombos,#caja .controles {
+#caja .bombos1,#caja .controles{
 	list-style:none;
 	padding:20px;
 	width:80%;
@@ -9,7 +9,17 @@
 	border-radius:10px;
 	text-align:center;
 }
-#caja .bombos li {
+#caja .jugadores{
+	list-style:none;
+	padding:20px;
+	width:80%;
+	margin: 10px auto;
+	border:1px solid silver;
+	border-radius:10px;
+	text-align:center;
+}
+
+#caja .bombos1 li {
 	
 	display:inline-block;
 	padding:10px;
