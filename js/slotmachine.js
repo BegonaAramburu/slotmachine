@@ -1,8 +1,22 @@
+/**
+ * Esta función de JavaScript devuelve una posición al azar de una Array.
+ * @param Le pasamos como parámetro el nombre de la Array que tendremos definida previamente
+ * @returns Nos devuelve una posición de la Array al azar
+ */
 function randomArray(nombreArray) {
 	var longitud = nombreArray.length;
 	var numeroAzar = Math.floor(Math.random() * longitud);
 	return numeroAzar;
 }
+
+/**
+ * Esta función de Javascript permite adjudicar un premio dependiendo de las combinaciones ganadoras
+ * Le pasamos los tres numeros obtenidos en los bombos como parámetros
+ * @param bomboA
+ * @param bomboB
+ * @param bomboC
+ * @returns Nos devuelve el valor del premio
+ */	
 function darPremio(bomboA, bomboB, bomboC) {
 	if (bomboA == 5 && bomboB == 5 && bomboC == 5) {
 		premio = 500 * 10;
@@ -35,6 +49,11 @@ function darPremio(bomboA, bomboB, bomboC) {
 	return premio;
 }
 
+/**
+ * Esta función nos alertará con un mensaje en pantalla cuando ganemos un premio
+ * @param premio
+ * @returns premio //siempre que sea mayor que 0
+ */
 function alertaPremio(premio) {
 	if (premio != 0) {
 		document.getElementById("alertaPremio").innerHTML = premio + " PUNTOS";
