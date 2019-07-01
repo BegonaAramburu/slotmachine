@@ -16,7 +16,7 @@ function randomArray(nombreArray) {
  * @param bomboB
  * @param bomboC
  * @returns Nos devuelve el valor del premio
- */	
+ */	c
 function darPremio(bomboA, bomboB, bomboC) {
 	if (bomboA == 5 && bomboB == 5 && bomboC == 5) {
 		premio = 500 * 10;
@@ -85,7 +85,7 @@ document.getElementById("tirar").onclick = function() {
 	var bomboB = randomArray(imagenes);
 	var bomboC = randomArray(imagenes);
 
-	// Las guardamos en su correspondiente elemento HTML con id "bomboA" B y C
+	// Las guardamos en su correspondiente elemento HTML con id "bomboA" B y C para poder ver la imagen
 	document.getElementById("bomboA").src = imagenes[bomboA];
 	document.getElementById("bomboB").src = imagenes[bomboB];
 	document.getElementById("bomboC").src = imagenes[bomboC];
