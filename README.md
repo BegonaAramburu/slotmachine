@@ -2,4 +2,4 @@
 Juego tragaperras
 
 
-version v1 
+version v2 
