@@ -16,7 +16,7 @@ function randomArray(nombreArray) {
  * @param bomboB
  * @param bomboC
  * @returns Nos devuelve el valor del premio
- */	c
+ */	
 function darPremio(bomboA, bomboB, bomboC) {
 	if (bomboA == 5 && bomboB == 5 && bomboC == 5) {
 		premio = 500 * 10;
