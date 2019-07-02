@@ -1,8 +1,22 @@
+/**
+ * Esta función de JavaScript devuelve una posición al azar de una Array.
+ * @param Le pasamos como parámetro el nombre de la Array que tendremos definida previamente
+ * @returns Nos devuelve una posición de la Array al azar
+ */
 function randomArray(nombreArray) {
 		var longitud = nombreArray.length;
 		var numeroAzar = Math.floor(Math.random() * longitud);
 		return numeroAzar;
 	}
+
+/**
+ * Esta función de Javascript permite adjudicar un premio dependiendo de las combinaciones ganadoras
+ * Le pasamos los tres numeros obtenidos en los bombos como parámetros
+ * @param bomboA
+ * @param bomboB
+ * @param bomboC
+ * @returns Nos devuelve el valor del premio
+ */
 	function darPremio(bomboA, bomboB, bomboC) {
 		if (bomboA == 5 && bomboB == 5 && bomboC == 5) {
 			premio = 500 * 10;
@@ -41,6 +55,7 @@ function randomArray(nombreArray) {
 	var puntos1 = 100;
 	var puntos2 = 100;
 	var premio;
+	//1.Definir el evento onclick del botón id="inicio"
 	document.getElementById("inicio").onclick = function() {
 		
 		nombre1 = prompt("Jugador 1: Escribe tu nombre");
@@ -56,7 +71,8 @@ function randomArray(nombreArray) {
 	}
 
 	// 2.Definir el evento onclick del botón id="tirar"
-		contadorTiradas = 0;
+	//Primero definimos una variable para saber a quién le toca tirar
+		var contadorTiradas = 0;
 	document.getElementById("tirar").onclick = function() {
 		
 		document.getElementById("alertaPremio").innerHTML = "";
@@ -85,13 +101,13 @@ function randomArray(nombreArray) {
 		console.log(bomboB);
 		console.log(bomboC);
 		
+		//Adjudicamos el premio al jugador 1 o 2 según el número de tiradas sean par o impar
 		if(contadorTiradas%2 != 0){
 			puntos1 = puntos1 + darPremio(bomboA, bomboB, bomboC) - 10;
 			if (premio != 0) {
 				document.getElementById("alertaPremio").innerHTML = nombre1 + " has ganado " + premio + " PUNTOS";
 			}
-			
-			
+					
 			document.getElementById("puntos1").value = puntos1;
 		}else{
 			puntos2 = puntos2 + darPremio(bomboA, bomboB, bomboC) - 10;
@@ -111,7 +127,7 @@ function randomArray(nombreArray) {
 			document.getElementById("puntos2").value = "No te quedan puntos";
 			document.getElementById("alertaPremio").innerHTML = "Ha ganado " + nombre1;
 		}
-		
+		//Avisamos al jugador que le toca tirar
 		if (puntos1 >=10 && puntos2 >=10 && contadorTiradas%2!=0){
 			document.getElementById("tocaTirar").innerHTML = nombre2 + " te toca tirar";
 		}else if(puntos1 >=10 && puntos2 >=10 && contadorTiradas%2==0){
